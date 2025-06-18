@@ -1,10 +1,8 @@
- const categories = ['wisdom', 'love', 'life', 'inspiration', 'happiness', 'motivation'];
+const categories = ['wisdom', 'love', 'life', 'inspiration', 'happiness', 'motivation'];
     let allQuotes = [];
     let filteredQuotes = [];
     let currentPage = 1;
     const quotesPerPage = 6;
-
-
     function assignCategories(quotes) {
       return quotes.map(quote => {
         const count = Math.floor(Math.random() * 2) + 1;
@@ -13,19 +11,14 @@
         return quote;
       });
     }
-
-
     function renderCategoryButtons() {
       const container = document.getElementById('category-buttons');
       container.innerHTML = '';
-
-  
       const allBtn = document.createElement('button');
       allBtn.textContent = 'All';
       allBtn.className = 'category-btn active';
       allBtn.dataset.category = 'all';
       container.appendChild(allBtn);
-
       categories.forEach(cat => {
         const btn = document.createElement('button');
         btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
@@ -33,12 +26,10 @@
         btn.dataset.category = cat;
         container.appendChild(btn);
       });
-
       container.querySelectorAll('button').forEach(btn => {
         btn.addEventListener('click', () => {
           container.querySelectorAll('button').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-
           const category = btn.dataset.category;
           currentPage = 1;
           if (category === 'all') {
@@ -50,21 +41,16 @@
         });
       });
     }
-
-  
     function renderQuotesPage() {
       const quotesList = document.getElementById('quotes-list');
       quotesList.innerHTML = '';
-
       if (filteredQuotes.length === 0) {
         quotesList.innerHTML = '<li>No quotes in this category.</li>';
         updatePaginationButtons();
         return;
       }
-
       const startIdx = (currentPage - 1) * quotesPerPage;
       const pageQuotes = filteredQuotes.slice(startIdx, startIdx + quotesPerPage);
-
       pageQuotes.forEach((quote, index) => {
         const li = document.createElement('li');
         li.className = 'quote-item';
@@ -76,8 +62,6 @@
         `;
         quotesList.appendChild(li);
       });
-
-   
       document.querySelectorAll('.btn-favorite').forEach(btn => {
         btn.addEventListener('click', e => {
           const idx = e.target.getAttribute('data-index');
@@ -92,33 +76,26 @@
           }
         });
       });
-
       updatePaginationButtons();
     }
-
     function updatePaginationButtons() {
       const prevBtn = document.getElementById('prev-btn');
       const nextBtn = document.getElementById('next-btn');
       prevBtn.disabled = currentPage === 1;
       nextBtn.disabled = currentPage * quotesPerPage >= filteredQuotes.length;
     }
-
- 
     document.getElementById('prev-btn').addEventListener('click', () => {
       if (currentPage > 1) {
         currentPage--;
         renderQuotesPage();
       }
     });
-
     document.getElementById('next-btn').addEventListener('click', () => {
       if (currentPage * quotesPerPage < filteredQuotes.length) {
         currentPage++;
         renderQuotesPage();
       }
     });
-
-   
     function saveReflection() {
       const reflectionInput = document.getElementById('reflection-input');
       const reflectionText = reflectionInput.value.trim();
@@ -135,8 +112,6 @@
       msg.textContent = 'Reflection saved!';
       msg.style.color = 'green';
     }
-
-  
     async function fetchQuotes() {
       try {
         const res = await fetch('https://dummyjson.com/quotes?limit=100');
@@ -150,7 +125,6 @@
         console.error('Error fetching quotes:', error);
       }
     }
-
     document.addEventListener('DOMContentLoaded', () => {
       fetchQuotes();
       document.getElementById('btn-save-reflection').addEventListener('click', saveReflection);
@@ -158,7 +132,6 @@
     const modal = document.getElementById("modal");
 const closeBtn = document.getElementById("close-btn");
 const modalQuote = document.getElementById("modal-quote");
-
 function quoteOfTheDay() {
     const quotes = [
         "Sunday Quote: The only way to do great work is to love what you do. - Steve Jobs",
@@ -176,5 +149,4 @@ function quoteOfTheDay() {
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
-
 window.addEventListener("load", quoteOfTheDay);
