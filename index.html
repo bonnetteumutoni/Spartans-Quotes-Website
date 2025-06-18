@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuotesHub - Quotes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">Quotes</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+        <li><a href="reflections.html">Reflections</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="reflection-section">
+      <h2>Save Your Reflection</h2>
+      <textarea id="reflection-input" placeholder="Write your reflection here..."></textarea>
+      <button id="btn-save-reflection">Save Reflection</button>
+      <p id="reflection-msg" class="message"></p>
+    </section>
+
+    <section class="quotes-container">
+      <section class="category-filter">
+        <h2>Filter by Category</h2>
+        <div id="category-buttons" class="category-buttons"></div>
+      </section>
+
+      <ul id="quotes-list">
+        <li>Loading quotes...</li>
+      </ul>
+
+      <div class="pagination">
+        <button id="prev-btn" disabled>Previous</button>
+        <button id="next-btn" disabled>Next</button>
+      </div>
+    </section>
+      <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-btn" class="close">&times;</span>
+      <h2>Quote of the Day</h2>
+      <p id="modal-quote"></p>
+    </div>
+  </div>
+  </main>
+
+  <footer>
+    <p>© 2025 QuotesHub. All rights reserved.</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
