@@ -1,14 +1,16 @@
-function renderReflections() {
+    function renderReflections() {
       const reflectionsList = document.getElementById('reflections-list');
       const noRefMsg = document.getElementById('no-reflections-msg');
       let reflections = JSON.parse(localStorage.getItem('reflections')) || [];
       reflectionsList.innerHTML = '';
+
       if (reflections.length === 0) {
         noRefMsg.style.display = 'block';
         return;
       } else {
         noRefMsg.style.display = 'none';
       }
+
       reflections.forEach((reflection, index) => {
         const li = document.createElement('li');
         li.className = 'reflection-item';
@@ -20,6 +22,7 @@ function renderReflections() {
         `;
         reflectionsList.appendChild(li);
       });
+
       document.querySelectorAll('.btn-remove').forEach(btn => {
         btn.style.backgroundColor="rgb(19, 37, 48)";
         btn.style.width="80%";
@@ -37,6 +40,7 @@ function renderReflections() {
         });
       });
     }
+
     document.addEventListener('DOMContentLoaded', () => {
       renderReflections();
     });
