@@ -166,6 +166,7 @@ main {
   font-style: italic;
   text-align: right;
 }
+/* Remove Button */
 .btn-remove {
   background-color: #44B1CC;
   color: white;
@@ -185,7 +186,7 @@ main {
   background-color: #0A4491;
   box-shadow: 0 6px 15px rgba(2, 93, 109, 0.6);
 }
-
+/* No Reflections Message */
 #no-reflections-msg {
   font-size: 1.2rem;
   font-weight: 600;
@@ -194,6 +195,7 @@ main {
   margin-top: 3rem;
   font-style: italic;
 }
+/* Scrollbar Styling for reflections list (optional) */
 .reflection-list::-webkit-scrollbar {
   width: 8px;
 }
@@ -268,6 +270,12 @@ main {
   margin-top: 0.5rem;
   font-size: 1rem;
 }
+
+
+
+
+
+
 
 .quotes-container {
   flex: 1 1 auto;
@@ -429,9 +437,7 @@ footer {
     color: white;
   }
 }
-
-
-
+/* Responsive */
 @media (max-width: 900px) {
   main {
     flex-direction: column;
