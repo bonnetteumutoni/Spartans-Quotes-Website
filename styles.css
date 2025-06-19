@@ -115,7 +115,7 @@ main {
 .yourreflect{
   max-width: 700px;
   margin: 2rem auto;
-  background: #E6F0FA; /* Light Grayish Blue */
+  background: #E6F0FA; 
   padding: 2rem 2.5rem;
   border-radius: 20px;
   box-shadow:
@@ -135,7 +135,7 @@ main {
   padding-right: 0.5rem;
 }
 .yourreflect-item{
-   background: #F7FBFF; /* Very light blue */
+   background: #F7FBFF; 
   border-radius: 1px;
   padding: 1.25rem 1.75rem;
   box-shadow:
@@ -166,7 +166,7 @@ main {
   font-style: italic;
   text-align: right;
 }
-/* Remove Button */
+
 .btn-remove {
   background-color: #44B1CC;
   color: white;
@@ -186,7 +186,6 @@ main {
   background-color: #0A4491;
   box-shadow: 0 6px 15px rgba(2, 93, 109, 0.6);
 }
-/* No Reflections Message */
 #no-reflections-msg {
   font-size: 1.2rem;
   font-weight: 600;
@@ -195,7 +194,7 @@ main {
   margin-top: 3rem;
   font-style: italic;
 }
-/* Scrollbar Styling for reflections list (optional) */
+
 .reflection-list::-webkit-scrollbar {
   width: 8px;
 }
@@ -430,7 +429,7 @@ footer {
     color: white;
   }
 }
-/* Responsive */
+
 @media (max-width: 900px) {
   main {
     flex-direction: column;
